@@ -50,7 +50,7 @@ public class FizzBuzzTest {
 
   @org.junit.Test
   public void stage1() {
-    FizzBuzz FizzBuzz = new FizzBuzz();
+    code._4_student_effort.ChallengeOne.FizzBuzz FizzBuzz = new code._4_student_effort.ChallengeOne.FizzBuzz();
     for (Map.Entry<Integer, String> entry : stage1.entrySet()) {
       Integer input = entry.getKey();
       String actual = FizzBuzz.fizzBuzz(entry.getKey());
@@ -61,7 +61,7 @@ public class FizzBuzzTest {
 
   @org.junit.Test
   public void stage2() {
-    FizzBuzz FizzBuzz = new FizzBuzz();
+    code._4_student_effort.ChallengeOne.FizzBuzz FizzBuzz = new code._4_student_effort.ChallengeOne.FizzBuzz();
     for (Map.Entry<Integer, String> entry : stage2.entrySet()) {
       Integer input = entry.getKey();
       String actual = FizzBuzz.fizzBuzz2(entry.getKey());
