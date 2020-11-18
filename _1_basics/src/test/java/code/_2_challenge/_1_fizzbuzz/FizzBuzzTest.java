@@ -39,8 +39,10 @@ public class FizzBuzzTest {
   );
 
   public static Map<Integer, String> stage2 = Map.ofEntries(
+          entry(2,"2"),
           entry(7, "Rizz"),
           entry(9, "FizzJazz"),
+          entry(11,"11"),
           entry(14, "Rizz"),
           entry(18, "FizzJazz"),
           entry(21, "FizzRizz"),
