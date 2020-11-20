@@ -39,15 +39,17 @@ public class FizzBuzzTest {
   );
 
   public static Map<Integer, String> stage2 = Map.ofEntries(
-          entry(2,"2"),
           entry(7, "Rizz"),
-          entry(9, "FizzJazz"),
-          entry(11,"11"),
+          entry(9, "Fizz"),
+          entry(11,"Jazz"),
           entry(14, "Rizz"),
-          entry(18, "FizzJazz"),
+          entry(18, "Fizz"),
           entry(21, "FizzRizz"),
-          entry(27, "FizzJazz"),
-          entry(28, "Rizz")
+          entry(27, "Fizz"),
+          entry(28, "Rizz"),
+          entry(33,"FizzJazz"),
+          entry(105,"FizzBuzzRizz"),
+          entry(1155,"FizzBuzzRizzJazz")
   );
 
   @org.junit.Test

@@ -20,9 +20,9 @@ public class FizzBuzz {
             value = value + "Buzz";
         if(key % 7 == 0 )
             value = value + "Rizz";
-        if(key % 9 == 0)
+        if(key % 11 == 0)
             value = value + "Jazz";
-        if(key % 3 != 0 && key % 5 != 0 && key % 7 != 0 && key % 9 != 0)
+        if(key % 3 != 0 && key % 5 != 0 && key % 7 != 0 && key % 11 != 0)
             value = value + key.toString();
         return value;
     }
