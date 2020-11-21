@@ -33,7 +33,7 @@ public class Challenge2 {
             if (c == '7') {
                 response = response + "Qix";
             }
-            // Fix care functioneaza fara compute2(number)
+            // Fix care merge fara compute2(number)
             /*if(c == '0'){
                 response = response + '*';
             }*/
