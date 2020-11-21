@@ -9,35 +9,41 @@ public class Challenge2 {
     }
 
     public static String compute(int number) {
-        StringBuilder response = new StringBuilder();
+        String response = new String();
         if(number % 3 == 0){
-            response.append("Foo");
+            response = response + "Foo";
         }
         if(number % 5 == 0){
-            response.append("Bar");
+            response = response + "Bar";
         }
         if(number % 7 == 0){
-            response.append("Qix");
+            response = response + "Qix";
         }
 
         char[] r = String.valueOf(number).toCharArray();
-        response.append(compute2(number));
+        response = response + compute2(number);
 
         for (char c : r) {
             if (c == '3') {
-                response.append("Foo");
+                response = response + "Foo";
             }
             if (c == '5') {
-                response.append("Bar");
+                response = response + "Bar";
             }
             if (c == '7') {
-                response.append("Qix");
+                response = response + "Qix";
             }
+            // Fix care functioneaza fara compute2(number)
+            /*if(c == '0'){
+                response = response + '*';
+            }*/
         }
 
+
+
         // if no values were found
-        if(response.length() == 0){
-            response = new StringBuilder();
+        if(response.length() == 0) {
+            response = String.valueOf(number);
         }
 
         return response.toString();
@@ -45,17 +51,17 @@ public class Challenge2 {
     }
 
     public static String compute2(int number){
-        StringBuilder response = new StringBuilder();
+        StringBuilder response2 = new StringBuilder();
         char[] r = String.valueOf(number).toCharArray();
 
         for(int i = 0 ; i < r.length ; i++){
             if( r[i] == '0'){
                 r[i] = '*';
             }
-            response.append(r[i]);
+            response2.append(r[i]);
         }
 
-        return response.toString();
+        return response2.toString();
     }
 
 }
