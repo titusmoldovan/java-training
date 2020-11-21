@@ -35,7 +35,7 @@ public class FooBarQixTest {
 
   @org.junit.Test
   public void stage1() {
-    FooBarQix FooBarQix = new FooBarQix();
+    code._4_student_effort.ChallengeTwo.FooBarQix FooBarQix = new code._4_student_effort.ChallengeTwo.FooBarQix();
     for (Map.Entry<Integer, String> entry : stage1.entrySet()) {
       Integer input = entry.getKey();
       String actual = FooBarQix.compute(entry.getKey());
