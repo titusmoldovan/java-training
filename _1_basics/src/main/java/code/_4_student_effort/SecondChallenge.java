@@ -14,8 +14,8 @@ public class SecondChallenge {
             ok = true;
         }
         if (numberToString.contains("3")) {
-            int n = getNumberOfOccurences(numberToString,'3');
-            for(int i=0; i<n; i++){
+            int n = getNumberOfOccurences(numberToString, '3');
+            for (int i = 0; i < n; i++) {
                 output += "Foo";
             }
             ok = true;
@@ -26,8 +26,8 @@ public class SecondChallenge {
             ok = true;
         }
         if (numberToString.contains("5")) {
-            int n = getNumberOfOccurences(numberToString,'5');
-            for(int i=0; i<n; i++){
+            int n = getNumberOfOccurences(numberToString, '5');
+            for (int i = 0; i < n; i++) {
                 output += "Bar";
             }
             ok = true;
@@ -37,30 +37,27 @@ public class SecondChallenge {
             ok = true;
         }
         if (numberToString.contains("7")) {
-            int n = getNumberOfOccurences(numberToString,'7');
-            for(int i=0; i<n; i++){
+            int n = getNumberOfOccurences(numberToString, '7');
+            for (int i = 0; i < n; i++) {
                 output += "Qix";
             }
             ok = true;
         }
-        if(!ok){
+        if (!ok) {
             return numberToString;
         }
         return output;
     }
 
     public static void main(String[] args) {
-//        System.out.println(compute(1));
-//        System.out.println(compute(3));
-//        System.out.println(compute(5));
-//        System.out.println(compute(15));
-//        System.out.println(compute(33));
-//        System.out.println(compute(51));
-        System.out.println(compute(303));
+        for (int i = 1; i <= 100; i++) {
+            System.out.println(i + " : " + compute(i));
+        }
 
 
     }
-    public static int getNumberOfOccurences(String someString, char someChar){
+
+    public static int getNumberOfOccurences(String someString, char someChar) {
         int count = 0;
 
         for (int i = 0; i < someString.length(); i++) {
