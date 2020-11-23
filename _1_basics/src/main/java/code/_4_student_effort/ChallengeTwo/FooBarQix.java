@@ -3,60 +3,61 @@ package code._4_student_effort.ChallengeTwo;
 public class FooBarQix {
 
     public static String compute(int value) {
-        String ans = "";
+        StringBuilder ans = new StringBuilder();
         if (value % 3 == 0)
-            ans +="Foo";
-        if(value % 5 == 0 )
-            ans+="Bar";
-        if(value % 7 == 0 )
-            ans+="Qix";
+            ans.append("Foo");
+        if (value % 5 == 0)
+            ans.append("Bar");
+        if (value % 7 == 0)
+            ans.append("Qix");
 
         char[] chars = String.valueOf(value).toCharArray();
 
-        for(char c: chars){
+        for (char c : chars) {
             if (c == '3')
-                ans+="Foo";
-            if(c == '5')
-                ans+="Bar";
-            if(c == '7')
-                ans+="Qix";
+                ans.append("Foo");
+            if (c == '5')
+                ans.append("Bar");
+            if (c == '7')
+                ans.append("Qix");
         }
 
-        if (ans.isEmpty()){
-            ans+=String.valueOf(value);
+        if (ans.length() == 0) {
+            ans.append(String.valueOf(value));
         }
-        return ans;
+        return ans.toString();
     }
-    public static String compute2(int value){
-        String ans = "";
+
+    public static String compute2(int value) {
+        StringBuilder ans = new StringBuilder();
         if (value % 3 == 0)
-            ans +="Foo";
-        if(value % 5 == 0 )
-            ans+="Bar";
-        if(value % 7 == 0 )
-            ans+="Qix";
+            ans.append("Foo");
+        if (value % 5 == 0)
+            ans.append("Bar");
+        if (value % 7 == 0)
+            ans.append("Qix");
 
         char[] chars = String.valueOf(value).toCharArray();
 
-        for(char c: chars){
+        for (char c : chars) {
             if (c == '3')
-                ans+="Foo";
-            if(c == '5')
-                ans+="Bar";
-            if(c == '7')
-                ans+="Qix";
+                ans.append("Foo");
+            if (c == '5')
+                ans.append("Bar");
+            if (c == '7')
+                ans.append("Qix");
             if (c == '0')
-                ans+="*";
+                ans.append("*");
         }
-        if (ans.isEmpty()){
-            ans+=String.valueOf(value);
+        if (ans.length() == 0) {
+            ans.append(String.valueOf(value));
         }
-        return ans;
-
+        return ans.toString();
     }
+
     public static void main(String[] args) {
-        for(int i = 1 ; i <= 100; i ++ ){
-            System.out.printf("%d: %s",i,compute(i)+", ");
+        for (int i = 1; i <= 100; i++) {
+            System.out.printf("%d: %s", i, compute(i) + ", ");
         }
     }
 }
