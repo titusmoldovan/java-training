@@ -1,10 +1,12 @@
 package code._2_challenge._1_fizzbuzz;
 
+import code._4_student_effort.MyFizzBuzz;
 import org.junit.Assert;
 
 import java.util.Map;
 
 import static java.util.Map.entry;
+
 
 public class FizzBuzzTest {
   public static Map<Integer, String> stage1 = Map.ofEntries(
@@ -40,17 +42,16 @@ public class FizzBuzzTest {
 
   public static Map<Integer, String> stage2 = Map.ofEntries(
           entry(7, "Rizz"),
-          entry(9, "FizzJazz"),
+          entry(11, "Jazz"),
           entry(14, "Rizz"),
-          entry(18, "FizzJazz"),
           entry(21, "FizzRizz"),
-          entry(27, "FizzJazz"),
+          entry(22, "Jazz"),
           entry(28, "Rizz")
   );
 
   @org.junit.Test
   public void stage1() {
-    FizzBuzz FizzBuzz = new FizzBuzz();
+    MyFizzBuzz FizzBuzz = new MyFizzBuzz();
     for (Map.Entry<Integer, String> entry : stage1.entrySet()) {
       Integer input = entry.getKey();
       String actual = FizzBuzz.fizzBuzz(entry.getKey());
@@ -61,7 +62,7 @@ public class FizzBuzzTest {
 
   @org.junit.Test
   public void stage2() {
-    FizzBuzz FizzBuzz = new FizzBuzz();
+    MyFizzBuzz FizzBuzz = new MyFizzBuzz();
     for (Map.Entry<Integer, String> entry : stage2.entrySet()) {
       Integer input = entry.getKey();
       String actual = FizzBuzz.fizzBuzz2(entry.getKey());

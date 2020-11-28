@@ -1,5 +1,6 @@
 package code._2_challenge._4_pair_of_3;
 
+import code._4_student_effort.MyPairOf3;
 import org.junit.Assert;
 
 import java.util.Arrays;
@@ -14,11 +15,11 @@ public class PairOf3Test {
 
   @org.junit.Test
   public void test() {
-    PairOf3 PairOf3 = new PairOf3();
+    MyPairOf3 PairOf3 = new MyPairOf3();
     for (Map.Entry<Integer[], Integer> entry : data.entrySet()) {
       Integer[] input = entry.getKey();
       Integer expected = entry.getValue();
-      Integer actual = PairOf3.countPairs(input, 0);
+      Integer actual = PairOf3.countPairs(input);
       Assert.assertEquals("for input: " + Arrays.asList(input), expected, actual);
     }
   }
