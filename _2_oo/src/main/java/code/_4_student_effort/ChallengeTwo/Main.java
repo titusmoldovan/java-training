@@ -6,7 +6,7 @@ import java.util.Map;
 public class Main {
 
     /*For exercise 1 */
-    private static final int noMovies = 2;
+    private static final int noOfMovies = 2;
     /*For exercise 2*/
     private static final String actorName = "Actor cu 2 oscaruri";
     /*For exercise 3*/
@@ -18,8 +18,8 @@ public class Main {
     public static void main(String[] args) {
 
 
-        System.out.println("Studio names with more than " + noMovies + " movies:");
-        String[] studioNames = getStudiosNamesWithMoreThanXMovies(studioDatabase, noMovies);
+        System.out.println("Studio names with more than " + noOfMovies + " movies:");
+        String[] studioNames = getStudiosNamesWithMoreThanXMovies(studioDatabase, noOfMovies);
         for (String name : studioNames) {
             System.out.println(name);
         }
@@ -101,7 +101,7 @@ public class Main {
 
     /* Helper functions */
 
-    public static String[] addElement(int n, String[] myArray, String element) {
+    private static String[] addElement(int n, String[] myArray, String element) {
         int i;
         String[] newArray = new String[n + 1];
         for (i = 0; i < n; i++) {
