@@ -5,8 +5,9 @@ public class Fighter {
     private Double health=100.00;
     private Double damagePerAttack;
 
-    public Fighter(String name) {
+    public Fighter(String name, Double damagePerAttack) {
         this.name = name;
+        this.damagePerAttack = damagePerAttack;
     }
 
     public void attack(Fighter opponent){
@@ -25,20 +26,25 @@ public class Fighter {
         return damagePerAttack;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+//    public void setName(String name) {
+//        this.name = name;
+//    }
 
-    public void setHealth(Double health) {
+    private void setHealth(Double health) {
         this.health = health;
     }
 
-    public void setDamagePerAttack(Double damagePerAttack) {
+    private void setDamagePerAttack(Double damagePerAttack) {
         this.damagePerAttack = damagePerAttack;
     }
 
     @Override
     public String toString() {
         return String.format("Fighter %s has curent health: %.2f",name,health);
+    }
+    public void decreaseDamageAttack(int round, double factor) {
+        if ((this.getHealth()) > 0.0 && (this.getDamagePerAttack() - (round * factor)) > 0.0) {
+            this.setDamagePerAttack(this.getDamagePerAttack() - round * factor);
+        }
     }
 }

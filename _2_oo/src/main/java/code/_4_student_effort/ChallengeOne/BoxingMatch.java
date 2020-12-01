@@ -14,11 +14,12 @@ public class BoxingMatch {
         System.out.println(secondFighter);
         System.out.println("***********************");
         int round = 0;
-        while (firstFighter.getHealth() > 0.0 && secondFighter.getHealth() > 0.0 && round <=12) {
+        while (firstFighter.getHealth() > 0.0 && secondFighter.getHealth() > 0.0 && round <= 12) {
 
-            for (round = 1; round <= 12; round++) {
+            for (int i = 1; i <= 12; i++) {
+                round = i;
                 if (firstFighter.getHealth() <= 0.0 || secondFighter.getHealth() <= 0.0) {
-                    if (Double.compare(firstFighter.getHealth(), secondFighter.getHealth()) != 0) {
+                    if (firstFighter.getHealth() != secondFighter.getHealth()) {
                         System.out.println("Knock OUT!");
                     }
                     break;
@@ -29,28 +30,31 @@ public class BoxingMatch {
                         showCurrentFight();
                         break;
                     case 4, 5, 6:
-                        decreaseDamageAttack(firstFighter, round, 0.1);
-                        decreaseDamageAttack(secondFighter, round, 0.1);
+                        firstFighter.decreaseDamageAttack(round, 0.1);
+                        secondFighter.decreaseDamageAttack(round, 0.1);
                         showCurrentFight();
 
                         break;
                     case 7, 8, 9:
-                        decreaseDamageAttack(firstFighter, round, 0.1);
-                        decreaseDamageAttack(secondFighter, round, 0.1);
+                        firstFighter.decreaseDamageAttack(round, 0.1);
+                        secondFighter.decreaseDamageAttack(round, 0.1);
                         showCurrentFight();
                         break;
                     case 10, 11, 12:
-                        decreaseDamageAttack(firstFighter, round, 0.1);
-                        decreaseDamageAttack(secondFighter, round, 0.1);
+                        firstFighter.decreaseDamageAttack(round, 0.1);
+                        secondFighter.decreaseDamageAttack(round, 0.1);
                         showCurrentFight();
                         break;
                 }
             }
         }
 
-        return Double.compare(firstFighter.getHealth(), secondFighter.getHealth()) == 0 ? "Tie!" :
-                Double.compare(firstFighter.getHealth(), secondFighter.getHealth()) > 0 ? firstFighter.getName() :
-                        secondFighter.getName();
+        return firstFighter.getHealth() == secondFighter.getHealth() ? "Tie" :
+                firstFighter.getHealth() > secondFighter.getHealth() ? firstFighter.getName() : secondFighter.getName();
+
+//        return Double.compare(firstFighter.getHealth(), secondFighter.getHealth()) == 0 ? "Tie!" :
+//                Double.compare(firstFighter.getHealth(), secondFighter.getHealth()) > 0 ? firstFighter.getName() :
+//                        secondFighter.getName();
 
     }
 
@@ -59,12 +63,6 @@ public class BoxingMatch {
         System.out.println(secondFighter);
         secondFighter.attack(firstFighter);
         System.out.println(firstFighter);
-    }
-
-    private void decreaseDamageAttack(Fighter fighter, int round, double factor) {
-        if ((fighter.getHealth()) > 0.0 && (fighter.getDamagePerAttack() - (round * factor)) > 0.0) {
-            fighter.setDamagePerAttack(fighter.getDamagePerAttack() - round * factor);
-        }
     }
 
 }
