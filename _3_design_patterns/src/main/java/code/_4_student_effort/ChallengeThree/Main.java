@@ -8,10 +8,12 @@ public class Main {
 
     public static void main(String[] args) {
 
+        System.out.println(proxy.getApartments());
         Apartment apartamentForStudent01 = proxy.rent(student01);
         System.out.println(student01 + " rented " + apartamentForStudent01);
         Apartment apartamentForStudent02 = proxy.rent(student02);
         System.out.println(student02 + " rented " + apartamentForStudent02);
+        System.out.println(proxy.getApartments());
 
     }
 

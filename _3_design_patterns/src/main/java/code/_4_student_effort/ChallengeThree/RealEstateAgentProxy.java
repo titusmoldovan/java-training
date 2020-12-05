@@ -18,8 +18,8 @@ public class RealEstateAgentProxy {
 
     public Apartment rent(Student student) {
         List<Apartment> affordableAppartaments = new ArrayList<>();
-        for(Apartment apartment : this.apartments){
-            if(apartment.getMonthlyRentCost() < student.getMoney()){
+        for (Apartment apartment : this.apartments) {
+            if (apartment.getMonthlyRentCost() < student.getMoney()) {
                 affordableAppartaments.add(apartment);
             }
         }
@@ -27,8 +27,13 @@ public class RealEstateAgentProxy {
             return null;
         } else {
             Random rn = new Random();
-            return affordableAppartaments.get(rn.nextInt(this.apartments.size()-1));
-
+            Apartment rentedApp = affordableAppartaments.get(rn.nextInt(this.apartments.size() - 1));
+            apartments.remove(rentedApp);
+            return rentedApp;
         }
+    }
+
+    public List<Apartment> getApartments() {
+        return apartments;
     }
 }
