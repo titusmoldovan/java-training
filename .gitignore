@@ -1,5 +1,8 @@
 *.iml
 *.ipr
 *.iws
+*.lock
+*.properties
+*.bin
 .idea/
 target/
