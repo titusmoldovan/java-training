@@ -7,12 +7,12 @@ import java.time.Instant;
 public class CopyTextFiles {
 
   public static void main(String[] args) throws IOException {
-    FileReader nonBufferedReader = new FileReader("_4_exceptions_io\\_test_files\\in\\a.txt");
-    FileWriter nonBufferedWriter = new FileWriter("_4_exceptions_io\\_test_files\\out\\aNonBuffered.txt");
+    FileReader nonBufferedReader = new FileReader("_4_exceptions_io/_test_files/in/a.txt");
+    FileWriter nonBufferedWriter = new FileWriter("_4_exceptions_io/_test_files/out/aNonBuffered.txt");
     printCopyDuration("non-buffered", nonBufferedReader, nonBufferedWriter);
 
-    BufferedReader bufferedReader = new BufferedReader(new FileReader("_4_exceptions_io\\_test_files\\in\\a.txt"));
-    BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("_4_exceptions_io\\_test_files\\out\\aBuffered.txt"));
+    BufferedReader bufferedReader = new BufferedReader(new FileReader("_4_exceptions_io/_test_files/in/a.txt"));
+    BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("_4_exceptions_io/_test_files/out/aBuffered.txt"));
     printCopyDuration("buffered", bufferedReader, bufferedWriter);
   }
 

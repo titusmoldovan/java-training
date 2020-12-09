@@ -7,12 +7,12 @@ import java.time.Instant;
 public class CopyBinaryFiles {
 
   public static void main(String[] args) throws IOException {
-    FileInputStream nonBufferedReader = new FileInputStream("_4_exceptions_io\\_test_files\\in\\a.jpg");
-    FileOutputStream nonBufferedWriter = new FileOutputStream("_4_exceptions_io\\_test_files\\out\\aNonBuffered.jpg");
+    FileInputStream nonBufferedReader = new FileInputStream("_4_exceptions_io/_test_files/in/a.jpg");
+    FileOutputStream nonBufferedWriter = new FileOutputStream("_4_exceptions_io/_test_files/out/aNonBuffered.jpg");
     printCopyDuration("non-buffered", nonBufferedReader, nonBufferedWriter);
 
-    BufferedInputStream bufferedReader = new BufferedInputStream(new FileInputStream("_4_exceptions_io\\_test_files\\in\\a.jpg"));
-    BufferedOutputStream bufferedWriter = new BufferedOutputStream(new FileOutputStream("_4_exceptions_io\\_test_files\\out\\aBuffered.jpg"));
+    BufferedInputStream bufferedReader = new BufferedInputStream(new FileInputStream("_4_exceptions_io/_test_files/in/a.jpg"));
+    BufferedOutputStream bufferedWriter = new BufferedOutputStream(new FileOutputStream("_4_exceptions_io/_test_files/out/aBuffered.jpg"));
     printCopyDuration("buffered", bufferedReader, bufferedWriter);
   }
 
