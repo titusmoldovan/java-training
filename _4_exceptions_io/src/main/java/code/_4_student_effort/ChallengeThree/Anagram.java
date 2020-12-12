@@ -20,7 +20,6 @@ public class Anagram {
     }
 
     private static void permute(String str, int l, int r) {
-        List<String> ret = new ArrayList<>();
         if (l == r) {
             System.out.println(str);
         } else {
