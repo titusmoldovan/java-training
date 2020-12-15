@@ -1,13 +1,10 @@
 package code._4_student_effort.ChallengeFour;
 
-import java.io.*;
 import java.util.HashMap;
 
-public class NumberLCD {
-
-    private static final String  input = "_4_exceptions_io/_test_files/in/input_number.txt";
-    private static final String  output = "_4_exceptions_io/_test_files/out/output_number.txt";
+public class Converter {
     private static final HashMap<String, int[][]> digitalNumbers;
+    private String message;
 
     static {
         int[][] zero = {{1, 1, 1}, {1, 0, 1}, {0, 1, 0}};
@@ -33,30 +30,13 @@ public class NumberLCD {
         digitalNumbers.put("9", nine);
     }
 
-    public static void main(String[] args) {
-
-        convertFiles(input, output);
+    public Converter(String message) {
+        this.message = message;
     }
 
-    private static void convertFiles(String inputPath, String outputPath) {
-        try (BufferedReader br = new BufferedReader(new FileReader(inputPath));
-             BufferedWriter bw = new BufferedWriter(new FileWriter(outputPath))) {
-
-            String line = br.readLine();
-            while (line != null) {
-                bw.write(convertToLCD(line, 0, 0));
-                line = br.readLine();
-
-            }
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-    }
-
-
-    private static String convertToLCD(String number, int width, int height) {
+    public String getLCDNumber() {
         StringBuilder sb = new StringBuilder();
-        char[] numbers = number.toCharArray();
+        char[] numbers = message.toCharArray();
         for (int k = 0; k < numbers.length; k++) {
             int[][] lcdNum = digitalNumbers.get(String.valueOf(numbers[k]));
             for (int i = lcdNum.length - 1; i >= 0; i--) {
