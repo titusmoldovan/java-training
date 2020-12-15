@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class ValueComparator implements Comparator<String> {
 
-    private HashMap<String,Integer> map = new HashMap<>();
+    private HashMap<String, Integer> map = new HashMap<>();
 
     public ValueComparator(Map<String, Integer> map) {
         this.map.putAll(map);

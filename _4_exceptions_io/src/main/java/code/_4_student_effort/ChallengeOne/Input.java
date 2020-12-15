@@ -29,8 +29,8 @@ public class Input {
         return scanner;
     }
 
-    private void closeScanner(){
-        if(scanner!=null){
+    private void closeScanner() {
+        if (scanner != null) {
             scanner.close();
         }
     }

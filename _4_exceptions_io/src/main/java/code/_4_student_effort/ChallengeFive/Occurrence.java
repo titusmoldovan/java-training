@@ -1,27 +1,17 @@
 package code._4_student_effort.ChallengeFive;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.*;
 import java.util.stream.Collectors;
 
 public class Occurrence {
 
-    private static final String INPUT_PATH = "_4_exceptions_io/_test_files/in/message.txt";
-    private static final Map<String, Integer> occurrences = new HashMap<>();
+    private static HashMap<String, Integer> occurrences;
 
-    static {
-        getWords();
+    public Occurrence(HashMap occurrences) {
+        this.occurrences = occurrences;
     }
 
-    public static void main(String[] args) {
-        topXWords(5);
-        System.out.println("-----");
-        topXWords2(5);
-    }
-
-    private static void topXWords2(int top) {
+    public void topXWords2(int top) {
         int count = 1;
         Map<String, Integer> sorted =
                 occurrences.entrySet().stream()
@@ -34,7 +24,7 @@ public class Occurrence {
         }
     }
 
-    private static void topXWords(int top) {
+    public void topXWords(int top) {
         //sort occurences by value
         Map<String, Integer> sortedWords = sortMapByValue(occurrences);
         int count = 0;
@@ -52,27 +42,5 @@ public class Occurrence {
         TreeMap<String, Integer> result = new TreeMap<>(comparator);
         result.putAll(map);
         return result;
-    }
-
-
-    private static void getWords() {
-        List<String> items = new ArrayList<>(Arrays.asList(",", ".", "'", "!", "?"));
-        try (Scanner scanner = new Scanner(new BufferedReader(new FileReader(INPUT_PATH)))) {
-            while (scanner.hasNext()) {
-                String st = scanner.next();
-                for (String item : items) {
-                    if (st.contains(item)) {
-                        st = st.replace(item, "");
-                    }
-                }
-                if (occurrences.containsKey(st)) {
-                    occurrences.put(st, occurrences.get(st) + 1);
-                } else {
-                    occurrences.put(st, 1);
-                }
-            }
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
     }
 }
