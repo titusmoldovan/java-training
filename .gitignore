@@ -1,6 +1,7 @@
 *.iml
 *.ipr
 *.iws
-.icloud
+*.icloud
 .idea/
 target/
+.gradle/

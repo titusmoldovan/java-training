@@ -10,14 +10,14 @@ public class Occurrence {
 
     private static final String INPUT_PATH = "_4_exceptions_io/_test_files/in/message.txt";
     private static final Map<String, Integer> occurrences = new HashMap<>();
-    static List<String> words = new ArrayList<>();
 
     static {
         getWords();
     }
 
     public static void main(String[] args) {
-        //topXWords(5);
+        topXWords(5);
+        System.out.println("-----");
         topXWords2(5);
     }
 
