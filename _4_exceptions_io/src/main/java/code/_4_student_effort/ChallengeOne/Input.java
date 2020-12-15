@@ -8,7 +8,6 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class Input {
-    // public static final String inputPath = "_4_exceptions_io/_test_files/in/phonebook.txt";
     private static Scanner scanner;
 
     private static String inputPath;
@@ -18,7 +17,6 @@ public class Input {
         this.inputPath = inputPath;
         phoneBook = new HashMap<>();
     }
-
 
     public static Scanner getScanner() throws FileNotFoundException {
         if (scanner == null) {
@@ -31,10 +29,17 @@ public class Input {
         return scanner;
     }
 
+    private void closeScanner(){
+        if(scanner!=null){
+            scanner.close();
+        }
+    }
+
     public void getInput() throws FileNotFoundException {
         while (getScanner().hasNextLine()) {
             phoneBook.put(getScanner().next(), getScanner().next());
         }
+        closeScanner();
     }
 
     public static void setInputPath(String inputPath) {

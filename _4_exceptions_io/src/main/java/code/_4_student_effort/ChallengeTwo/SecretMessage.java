@@ -1,34 +1,20 @@
 package code._4_student_effort.ChallengeTwo;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-
 public class SecretMessage {
 
+    private String encodedMessage;
 
-    public static void main(String[] args) {
-        String inputPath = "_4_exceptions_io/_test_files/in/message.txt";
-        SecretMessage sm = new SecretMessage();
-        sm.getSecretMessage(inputPath);
+    public SecretMessage(String encodedMessage) {
+        this.encodedMessage = encodedMessage;
     }
 
-    private void getSecretMessage(String inputPath) {
+    public String decodeMessage() {
         StringBuilder ans = new StringBuilder();
-        try (BufferedReader reader = new BufferedReader(new FileReader(inputPath))) {
-            int c = reader.read();
-            while (c != -1) {
-                char character = (char) c;
-                if (Character.isUpperCase(character)) {
-                    ans.append(character);
-                }
-                c = reader.read();
+        for (char c : this.encodedMessage.toCharArray()) {
+            if (Character.isUpperCase(c)) {
+                ans.append(c);
             }
-            String finalString = new String(ans).replace("X", " ");
-            System.out.println(finalString);
-
-        } catch (IOException ex) {
-            ex.printStackTrace();
         }
+        return new String(ans).replace("X", " ");
     }
 }
