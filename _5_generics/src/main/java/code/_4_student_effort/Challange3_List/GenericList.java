@@ -11,6 +11,10 @@ public class GenericList <T> implements InterfaceOfGenericList{
         insideList.add(root);
     }
 
+    public List<T> getInsideList()
+    {
+        return insideList;
+    }
     @Override
     public void insert(Object elem) {
         insideList.add((T)elem);
