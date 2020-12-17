@@ -1,16 +1,19 @@
 package code._4_student_effort._1_exchangeDesk;
 
 public abstract class Money {
-    protected Integer amount;
-    public Money(int amount)
+    protected Double amount;
+    public Money(){
+
+    }
+    public Money(Double amount)
     {
         this.amount = amount;
     }
-    public void SetAmount(Integer newAmount)
+    public void setAmount(Double newAmount)
     {
         amount = newAmount;
     }
-    public Integer getAmount()
+    public Double getAmount()
     {
         return amount;
     }
