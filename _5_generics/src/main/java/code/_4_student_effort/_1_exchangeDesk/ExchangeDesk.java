@@ -3,7 +3,7 @@ package code._4_student_effort._1_exchangeDesk;
 import java.lang.reflect.InvocationTargetException;
 
 public class ExchangeDesk {
-    <T extends Money, F extends Money> T convert(F fromCurrency, Class<T> toClass, double rate)
+    public static <T extends Money, F extends Money> T convert(F fromCurrency, Class<T> toClass, double rate)
     {
         T result = null;
         try {
