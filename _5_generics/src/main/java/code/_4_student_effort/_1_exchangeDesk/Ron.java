@@ -1,26 +1,13 @@
 package code._4_student_effort._1_exchangeDesk;
 
-public class Ron implements Money{
-    private Integer value;
-    public Ron(int value)
+public class Ron extends Money{
+
+    public Ron(Integer value)
     {
-        this.value = value;
+        super(value);
     }
-
-    @Override
-    public void setValue(Integer newValue) {
-        this.value = newValue;
-    }
-
-    @Override
-    public Integer getValue() {
-        return value;
-    }
-
     @Override
     public String moneyToString() {
-        String output;
-        output = value.toString() + "lei";
-        return output;
+        return amount.toString() + "lei";
     }
 }
