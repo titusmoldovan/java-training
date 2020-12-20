@@ -1,5 +1,7 @@
 *.iml
 *.ipr
 *.iws
+*.icloud
+.gradle/
 .idea/
 target/
