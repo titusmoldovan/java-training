@@ -16,7 +16,7 @@ public class GenericList<T> implements IGenericList<T> {
             cursor = cursor.getNext();
         }
 
-        code._2_challenge._3_generic_linked_list.IGenericNode<T> newNode = new code._2_challenge._3_generic_linked_list.GenericNode();
+        IGenericNode<T> newNode = new GenericNode();
         newNode.setValue(element);
         cursor.setNext(newNode);
     }
