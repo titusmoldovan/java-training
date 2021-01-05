@@ -1,0 +1,8 @@
+
+    For the observer design pattern I chose to implement a deposit of products. There are 2 ways in which the products
+from the deposit can be viewed: their complete name and description, or their type. The client can chose which view,
+depending on his preferences. For example, he might be interested to see if there are any headphones in the deposit,
+and only if there are, he might want to look at each headphone in detail.
+    The observable in this case is the deposit, and the observers are the 2 views in which a customer can look at the
+products from the deposit. In this way, the products are only in the Deposit class, and each view contains the needed
+details of the products. When a new product is added in the deposit, the views will be notified to update themselves.

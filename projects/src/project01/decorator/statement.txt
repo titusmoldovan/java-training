@@ -1,0 +1,10 @@
+
+    I chose to implement an application for a teahouse in order to provide a concrete implementation for the decorator
+design pattern.
+    The teahouse has for now water and 3 types of teas: black tea, red tea and green tea. Each customer can choose to
+add milk, sugar, a cookie, or any combination of these 3. This would mean that there would be necessary to have a class
+for each possible combination of the add-ons. Seeing that the teahouse could develop further more, it could also offer
+the possibility to add vanilla or other flavours, which would be really difficult to manage in this way.
+    Here is when the decorator design patter would come in handy. Using it, you would only have to implement the
+abstract class AddOn from which each type of add-on would inherit, getting rid of the classes of the combinations of
+add-ons.
