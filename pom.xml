@@ -19,6 +19,7 @@
         <module>_8_functional</module>
         <module>_9_reactive</module>
         <module>clean_code_projects</module>
+        <module>project1_design_patterns</module>
     </modules>
 
     <properties>
