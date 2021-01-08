@@ -69,7 +69,7 @@
   city     clara    classic  claudia  clean    client   
   climax   clinic   clock    club     cockpit  coconut  
   cola     collect  colombo  colony   color    combat   
-  comedy   command  company  concert  connect  consul   
+  comedy   command_remote_control  company  concert  connect  consul
   contact  contour  control  convert  copy     corner   
   corona   correct  cosmos   couple   courage  cowboy   
   craft    crash    cricket  crown    cuba     dallas   
