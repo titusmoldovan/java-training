@@ -1,0 +1,30 @@
+Cirlomaneanu Alexandru
+
+Design Patterns Project
+
+I simulated a pizza delivery app for which the user needs to pick a city, a pizza type and a pizza
+size. The choosing possibilites are given and any unknown choice will result in a error and closing
+the program. The main class tests this simualtion displaying to the stdout the options the user can
+choose and the answers to the choices. The inputs are scanned from stdin using java.util.Scanner 
+class. For this projects I also used some String and double constants and I noted them in a 
+separate java class.
+
+The design patterns I used are Factory Design Pattern and Strategy Design Pattern. 
+
+1. Factory 
+
+I created a Pizza abstract class with two abstract methods: getPrice() (returns the pirce) and 
+showPizza() (displays the pizza ordered with its ingredients and its price). I implemented three
+pizza types (Hawaiian, Rustica, Supreme) that extend the abstract class. Each pizza type has a 
+different list of ingredients and different costs that are added tot the base price.
+For creating a Pizza object I use the PizzaFactory class with createPizza() method. This method
+get as argumets the pizza type and its size. Using a switch it chooses to construct a pizza 
+according to its type. After enetering a case for the type I use another switch to choose a case
+for the pizza size (large, medium, small) and contruct the desired pizza.
+
+2. Strategy
+
+I created a Delivery interface that has a method to show where and when the pizza will be 
+delivered. For this interface I wrote three implementations for each city the pizza restaurant
+operates. When the user chooses the city a stretegy for delievery will be used to display a success
+message.
