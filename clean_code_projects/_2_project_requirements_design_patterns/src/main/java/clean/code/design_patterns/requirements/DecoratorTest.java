@@ -1,4 +1,4 @@
-package com.company;
+package clean.code.design_patterns.requirements;
 
 import java.io.IOException;
 import java.util.Scanner;

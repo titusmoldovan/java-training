@@ -1,4 +1,4 @@
-package com.company;
+package clean.code.design_patterns.requirements;
 
 public class Appetizer implements Food {
 

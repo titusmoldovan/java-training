@@ -1,4 +1,4 @@
-package com.company;
+package clean.code.design_patterns.requirements;
 
 public class Decorator implements Food{
     private Food newFood;
