@@ -1,0 +1,10 @@
+https://github.com/MitzaMisu/CarPark
+
+Aici puteti gasi primul proiect pe care l-am facut. Am facut acest proiect si pentru facultate, dar l-am adaptat
+cerintelor dumneavoastra. Am folosit 2 Design Pattern-uri, ci anume Singleton si Observer.
+
+Proiectul este simularea unei parcari de masini cu taxa.
+
+Singleton am folosit pentru GUI ca sa ma asigur ca GUI e instantiat o singura data.
+Observer Pattern l-am folosit pentru a modifica anumite Imagini sau texte de pe GUI in functie de ce se intampla
+in interiorul parcarii.
