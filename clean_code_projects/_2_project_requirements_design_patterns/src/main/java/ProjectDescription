@@ -1,0 +1,19 @@
+
+
+I made a project for creating and displaying different types of sportiv championships based on sport type.
+For initial puropose I chosed 3 types of sport: Football, Handball and Basketball
+
+The project model consists in different type of entities:
+    - Sportiv people (Coach and Player)
+    - Team of players and coach
+    - Championship of teams from same sport type.
+    - Stages of championships
+    - Matches of stages
+    - Score of matches
+
+Design pattern used:
+    -Abstract Factory (to create championships and teams based on a specific file with championship name and teams of that championship and based on sport type)
+    -Builder ( to build players with additional proprieties lik age, attacking points, defensive points, etc)
+
+To be continued:
+    - Generate match schedule for every championship
