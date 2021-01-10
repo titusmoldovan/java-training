@@ -1,6 +1,6 @@
 package clean.code.design_patterns.requirements;
 
-public class Main {
+public class CompositionTest {
 
     //composition problem to imitate a pizza restaurant
 
