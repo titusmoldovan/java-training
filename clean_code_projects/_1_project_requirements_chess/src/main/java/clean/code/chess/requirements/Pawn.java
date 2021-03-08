@@ -11,7 +11,7 @@ public class Pawn {
         this.pieceColor = pieceColor;
     }
 
-    public ChessBoard getChesssBoard() {
+    public ChessBoard getChessBoard() {
         return chessBoard;
     }
 
@@ -39,12 +39,68 @@ public class Pawn {
         return this.pieceColor;
     }
 
-    private void setPieceColor(PieceColor value) {
-        pieceColor = value;
-    }
+    public void setPieceColor(PieceColor pieceColor) { this.pieceColor = pieceColor;}
+
 
     public void Move(MovementType movementType, int newX, int newY) {
-        throw new UnsupportedOperationException("Need to implement Pawn.Move()") ;
+        switch ( movementType )
+        {
+            case MOVE:
+                if ( !isValidMoveForChessPiece( newX, newY ) )
+                {
+                    newX = this.getXCoordinate();
+                    newY = this.getYCoordinate();
+                }
+                break;
+            case CAPTURE:
+                if ( !isValidCaptureForChessPiece( newX, newY ) )
+                {
+                    newX = this.getXCoordinate();
+                    newY = this.getYCoordinate();
+                }
+                break;
+            default:
+                System.out.println("Not a legal position.");
+        }
+
+        Pawn occupyingPiece = getChessBoard().getPawnAtCoord( newX, newY );
+
+        if ( occupyingPiece != null )
+        {
+            if ( this.getPieceColor().equals( occupyingPiece.getPieceColor() ) )
+            {
+                this.capturePiece(occupyingPiece);
+            }
+        }
+        this.setXCoordinate( newX );
+        this.setYCoordinate( newY );
+    }
+
+    private void capturePiece(Pawn occupyingPiece) {
+        // TO BE IMPLEMENTED
+    }
+
+    public boolean isValidMoveForChessPiece( int xCoordinate, int yCoordinate )
+    {
+        if (this.getXCoordinate() == xCoordinate){
+        if ( this.getYCoordinate() - 2 < 0)
+        {
+            // Bottom part
+            return ( yCoordinate - this.getYCoordinate() == 1 );
+        }
+        else
+        {
+            // Top part
+            return ( yCoordinate - this.getYCoordinate() ) == -1;
+        }
+        }else{
+            return false;
+        }
+    }
+
+    public boolean isValidCaptureForChessPiece( int xCoordinate, int yCoordinate )
+    {
+        throw new UnsupportedOperationException( "Need to implement Pawn.isValidCaptureForChessPiece()" );
     }
 
     @Override
