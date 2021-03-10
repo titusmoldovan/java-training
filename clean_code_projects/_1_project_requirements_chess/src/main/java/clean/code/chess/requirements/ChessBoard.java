@@ -15,9 +15,13 @@ public class ChessBoard {
     public ChessBoard() {
         loadPawns();
         loadOtherPieces();
+
+        for(Piece piece : pieces.values()){
+            piece.setChessBoard(this);
+        }
     }
     private void loadOtherPieces() {
-        for(int i = 0; i < MAX_BOARD_WIDTH;i++){
+        for(int i = 0; i <= MAX_BOARD_WIDTH;i++){
             switch (i) {
                 case 0,7:
                     pieces.put(new Coordinate(0,i),new Rook(PieceColor.WHITE,0,i));
