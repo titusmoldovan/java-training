@@ -1,14 +1,25 @@
-package clean.code.chess.requirements;
+package clean.code.chess.requirements.Pieces;
 
-public class Pawn {
+import clean.code.chess.requirements.ChessBoard;
+import clean.code.chess.requirements.MovementType;
+import clean.code.chess.requirements.PieceColor;
 
-    private ChessBoard chessBoard;
-    private int xCoordinate;
-    private int yCoordinate;
-    private PieceColor pieceColor;
+public abstract class Piece {
 
-    public Pawn(PieceColor pieceColor) {
+    protected ChessBoard chessBoard;
+    protected PieceColor pieceColor;
+
+    protected int xCoordinate;
+    protected int yCoordinate;
+
+    public Piece(PieceColor pieceColor, int xCoordinate, int yCoordinate) {
         this.pieceColor = pieceColor;
+        this.xCoordinate = xCoordinate;
+        this.yCoordinate = yCoordinate;
+    }
+
+    public Piece(PieceColor color) {
+        this.pieceColor = color;
     }
 
     public ChessBoard getChesssBoard() {
@@ -39,13 +50,8 @@ public class Pawn {
         return this.pieceColor;
     }
 
-    private void setPieceColor(PieceColor value) {
-        pieceColor = value;
-    }
+    public abstract void Move(MovementType movementType, int newX, int newY);
 
-    public void Move(MovementType movementType, int newX, int newY) {
-        throw new UnsupportedOperationException("Need to implement Pawn.Move()") ;
-    }
 
     @Override
     public String toString() {
@@ -56,4 +62,5 @@ public class Pawn {
         String eol = System.lineSeparator();
         return String.format("Current X: {1}{0}Current Y: {2}{0}Piece Color: {3}", eol, xCoordinate, yCoordinate, pieceColor);
     }
+
 }
