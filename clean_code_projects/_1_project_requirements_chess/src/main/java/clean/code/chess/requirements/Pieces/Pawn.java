@@ -20,16 +20,16 @@ public class Pawn extends Piece {
     protected List<Coordinate> availablePositions() {
         List<Coordinate> positions = new ArrayList<>();
         if(xCoordinate==1){
-            positions.add(new Coordinate(xCoordinate+2,yCoordinate));
-            positions.add(new Coordinate(xCoordinate+1,yCoordinate));
+            positions.add(new Coordinate(xCoordinate,yCoordinate+2));
+            positions.add(new Coordinate(xCoordinate,yCoordinate+1));
         }else{
-            positions.add(new Coordinate(xCoordinate+1,yCoordinate));
+            positions.add(new Coordinate(xCoordinate,yCoordinate+1));
         }
         if(xCoordinate==6){
-            positions.add(new Coordinate(xCoordinate-2,yCoordinate));
-            positions.add(new Coordinate(xCoordinate-1,yCoordinate));
+            positions.add(new Coordinate(xCoordinate,yCoordinate-2));
+            positions.add(new Coordinate(xCoordinate,yCoordinate-1));
         }else{
-            positions.add(new Coordinate(xCoordinate-1,yCoordinate));
+            positions.add(new Coordinate(xCoordinate,yCoordinate-1));
         }
 
         return positions;
@@ -40,7 +40,7 @@ public class Pawn extends Piece {
             if(yCoordinate+1 <=7 && xCoordinate +1 <=7){
                 positions.add(new Coordinate(xCoordinate+1,yCoordinate+1));
             }
-            if(yCoordinate+1 >=0 && xCoordinate - 1>=0){
+            if(yCoordinate+1 <=7 && xCoordinate - 1 >=0){
                 positions.add(new Coordinate(xCoordinate-1,yCoordinate+1));
             }
         }
@@ -65,6 +65,7 @@ public class Pawn extends Piece {
                 this.xCoordinate = newX;
                 this.yCoordinate = newY;
                 System.out.println("Good moving position");
+                chessBoard.getPieces().remove(desiredCoordinate);
             }else{
                 System.out.println("Unavailable moving position");
             }
@@ -74,6 +75,7 @@ public class Pawn extends Piece {
                 this.xCoordinate = newX;
                 this.yCoordinate = newY;
                 System.out.println("Good capture position");
+                chessBoard.getPieces().remove(desiredCoordinate);
             }else{
                 System.out.println("Unavailable capture position");
             }

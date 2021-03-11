@@ -22,9 +22,13 @@ public class Main {
         System.out.println("Player 2 pieces:");
         System.out.println(player2.getAvailablePieces());
 
-        player1.movePiece(1,1,2,1);
+        player1.movePiece(1,1,1,3);
+        player1.movePiece(1,3,1,4);
+        player1.movePiece(1,4,1,5);
+        player1.capturePiece(1,5,2,6);
 
-        //System.out.println(player1.getAvailablePieces());
+
+        System.out.println(player1.getAvailablePieces());
 
 
 
