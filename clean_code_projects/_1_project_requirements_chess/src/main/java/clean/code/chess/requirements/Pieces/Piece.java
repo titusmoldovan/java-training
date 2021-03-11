@@ -1,8 +1,11 @@
 package clean.code.chess.requirements.Pieces;
 
 import clean.code.chess.requirements.ChessBoard;
+import clean.code.chess.requirements.Coordinate;
 import clean.code.chess.requirements.MovementType;
 import clean.code.chess.requirements.PieceColor;
+
+import java.util.List;
 
 public abstract class Piece {
 
@@ -50,7 +53,31 @@ public abstract class Piece {
         return this.pieceColor;
     }
 
-    public abstract void Move(MovementType movementType, int newX, int newY);
+    protected abstract List<Coordinate> availablePositions();
+
+    public void Move(MovementType movementType, int newX, int newY){
+        Coordinate desiredCoordinate = new Coordinate(newX, newY);
+
+        List positions = availablePositions();
+        if (positions.contains(desiredCoordinate)) {
+            if (chessBoard.getPieces().get(desiredCoordinate) != null) {
+                if (!chessBoard.getPieces().get(desiredCoordinate).getPieceColor().equals(pieceColor)) {
+                    System.out.println("Good capture");
+                    this.xCoordinate = newX;
+                    this.yCoordinate = newY;
+                    chessBoard.getPieces().remove(desiredCoordinate);
+                }else{
+                    System.out.println("Unavailable position, your piece is here");
+                }
+            } else {
+                this.xCoordinate = newX;
+                this.yCoordinate = newY;
+                System.out.println("Good move");
+            }
+        } else {
+            System.out.println("Unavailable position");
+        }
+    }
 
 
     @Override
