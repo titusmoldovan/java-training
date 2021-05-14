@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        System.out.println(compute2(105));
+        System.out.println(compute2(8));
     }
 
     public static String compute(int number) {
@@ -23,7 +23,7 @@ public class Main {
         String numberString = String.valueOf(number);
         StringBuilder stringBuilder = new StringBuilder(isDividing(number));
         for (Character digit : numberString.toCharArray()) {
-            stringBuilder.append(isContainingTweak(digit - '0'));
+            stringBuilder.append(isContainingTweaked(digit - '0'));
         }
         if (stringBuilder.toString().isBlank()) {
             return String.valueOf(number);
@@ -69,7 +69,7 @@ public class Main {
         return computedString.toString();
     }
 
-    public static String isContainingTweak(int number) {
+    public static String isContainingTweaked(int number) {
         StringBuilder computedString = new StringBuilder();
         if (String.valueOf(number).contains(String.valueOf(3))) {
             computedString.append("Foo");
