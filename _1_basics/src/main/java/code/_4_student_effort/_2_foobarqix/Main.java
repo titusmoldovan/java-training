@@ -4,7 +4,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        System.out.println(compute2(8));
+        System.out.println(compute(105));
+        System.out.println(compute2(105));
     }
 
     public static String compute(int number) {

@@ -1,40 +1,39 @@
 package code._4_student_effort._3_pair_of_2;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class Main {
 
     public static void main(String[] args) {
-        Integer[] array = new Integer[]{
-                3, 2, -3, -2, 3, 0
-        };
+        List<Integer> arrayList = Arrays.asList(3, 2, -3, -2, 3, 0);
 
-        System.out.println(makePairs(array));
-
-
+        System.out.println("Count is : " + makePairs(arrayList));
     }
 
-    public static Integer makePairs(Integer[] numbers) {
-        Integer pairs = 0;
-        Integer[] indexesIncludedInPairs = new Integer[numbers.length];
-        int nrOfIndexesIncludedInPairs = 0;
-
-        for (int i = 0; i < numbers.length - 1; i++) {
-            for (int j = i + 1; j < numbers.length; j++) {
-                boolean indexesIncludedInOtherPairs = false;
-                for (int k = 0; k < nrOfIndexesIncludedInPairs; k++) {
-                    if (indexesIncludedInPairs[k] == i || indexesIncludedInPairs[k] == j) {
-                        indexesIncludedInOtherPairs = true;
-                        break;
-                    }
+    public static Integer makePairs(List<Integer> numbers) {
+        int cnt = 0;
+        for (int i = 0; i < numbers.size() - 1; i++) {
+            for (int j = i + 1; j < numbers.size(); j++) {
+                int sum;
+                if (checkIfIsMaxInt(numbers.get(i)) || checkIfIsMaxInt(numbers.get(j))) {
+                    sum = -1;
+                } else {
+                    sum = numbers.get(i) + numbers.get(j);
                 }
-                if (!indexesIncludedInOtherPairs && (numbers[i] + numbers[j] == 0)) {
-                    indexesIncludedInPairs[nrOfIndexesIncludedInPairs++] = i;
-                    indexesIncludedInPairs[nrOfIndexesIncludedInPairs++] = j;
-                    pairs++;
-                    break;
+                if (sum == 0) {
+                    System.out.println(i + ":" + numbers.get(i) + "\n" + j + ":" + numbers.get(j));
+                    numbers.set(i, Integer.MIN_VALUE);
+                    numbers.set(j, Integer.MIN_VALUE);
+                    cnt++;
                 }
             }
         }
-        return pairs;
+        return cnt;
+    }
+
+    public static boolean checkIfIsMaxInt(Integer number) {
+        return number.equals(Integer.MIN_VALUE);
     }
 }
 
