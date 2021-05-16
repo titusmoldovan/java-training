@@ -20,8 +20,8 @@ public class Challenge3 {
         for (int i = 0; i < n - 1; i++) {
             for (int j = i + 1; j < n; j++) {
                 if (array.get(i) + array.get(j) == 0
-                        && array.get(i) != 0
-                        && array.get(j) != 0) {
+                                            && array.get(i) != 0
+                                            && array.get(j) != 0) {
                     array.set(i, 0);
                     array.set(j, 0);
                     noPairs++;

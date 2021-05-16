@@ -22,9 +22,9 @@ public class Challenge4 {
             for (int j = i + 1; j < n - 1; j++) {
                 for (int k = j + 1; k < n; k++) {
                     if (array.get(i) + array.get(j) + array.get(k) == 0
-                            && array.get(i) != 0
-                            && array.get(j) != 0
-                            && array.get(k) != 0) {
+                                        && array.get(i) != 0
+                                        && array.get(j) != 0
+                                        && array.get(k) != 0) {
                         array.set(i, 0);
                         array.set(j, 0);
                         array.set(k, 0);

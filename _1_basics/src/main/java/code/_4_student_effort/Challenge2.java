@@ -72,10 +72,10 @@ public class Challenge2 {
             modified = modified.concat("Qix");
             isOK = true;
         }
-        if (hasZero == false) {
+        if (!hasZero) {
             modified = modified.concat(compute(number));
         } else {
-            if (isOK == false) {
+            if (!isOK) {
                 for( ; reversed != 0; reversed /= 10) {
                     if (reversed % 10 == 0) {
                         modified = modified.concat("*");
