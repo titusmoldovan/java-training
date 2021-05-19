@@ -45,13 +45,13 @@ public class Main {
     public static String isDividing(int number) {
         StringBuilder computedString = new StringBuilder();
         if (number % 3 == 0) {
-            computedString.append("Foo");
+            return computedString.append("Foo").toString();
         }
         if (number % 5 == 0) {
-            computedString.append("Bar");
+            return computedString.append("Bar").toString();
         }
         if (number % 7 == 0) {
-            computedString.append("Qix");
+            return computedString.append("Qix").toString();
         }
         return computedString.toString();
     }
@@ -59,13 +59,13 @@ public class Main {
     public static String isContaining(int number) {
         StringBuilder computedString = new StringBuilder();
         if (String.valueOf(number).contains(String.valueOf(3))) {
-            computedString.append("Foo");
+            return computedString.append("Foo").toString();
         }
         if (String.valueOf(number).contains(String.valueOf(5))) {
-            computedString.append("Bar");
+            return computedString.append("Bar").toString();
         }
         if (String.valueOf(number).contains(String.valueOf(7))) {
-            computedString.append("Qix");
+            return computedString.append("Qix").toString();
         }
         return computedString.toString();
     }
@@ -73,16 +73,16 @@ public class Main {
     public static String isContainingTweaked(int number) {
         StringBuilder computedString = new StringBuilder();
         if (String.valueOf(number).contains(String.valueOf(3))) {
-            computedString.append("Foo");
+            return computedString.append("Foo").toString();
         }
         if (String.valueOf(number).contains(String.valueOf(5))) {
-            computedString.append("Bar");
+            return computedString.append("Bar").toString();
         }
         if (String.valueOf(number).contains(String.valueOf(7))) {
-            computedString.append("Qix");
+            return computedString.append("Qix").toString();
         }
         if (is0(number)) {
-            computedString.append("*");
+            return computedString.append("*").toString();
         }
         return computedString.toString();
     }
