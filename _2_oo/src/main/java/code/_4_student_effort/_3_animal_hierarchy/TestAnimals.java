@@ -12,5 +12,6 @@ public class TestAnimals {
         cat.play();
         animal.walk();
         p.play();
+        System.out.println("1");
     }
 }
