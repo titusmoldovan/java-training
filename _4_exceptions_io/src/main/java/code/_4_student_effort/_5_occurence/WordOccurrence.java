@@ -20,4 +20,10 @@ public class WordOccurrence {
     public void increaseOccurrence() {
         this.occurrence++;
     }
+
+    @Override
+    public String toString() {
+        return "word= " + word +
+                ", occurrence= " + occurrence;
+    }
 }

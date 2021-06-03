@@ -31,7 +31,6 @@ public class Main {
         phoneNumbers.forEach(System.out::println);
     }
 
-
     public static String findCertainNumbers(String name) {
         return Objects.requireNonNull(items.stream().filter(phoneNumber -> phoneNumber.getName().equals(name)).findAny().orElse(null)).getPhoneNumber();
     }
