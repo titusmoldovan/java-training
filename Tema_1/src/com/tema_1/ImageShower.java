@@ -21,30 +21,36 @@ public class ImageShower {
         JPanel panel_1 = new JPanel();
         window.add(BorderLayout.NORTH, panel_1);
 
+        ImageIcon p = new ImageIcon();
+        BufferedImage img = ImageIO.read(new File("Images\\masina_white.jpg"));
+        JLabel lbl = new JLabel();
+        p.setImage(img);
+        lbl.setIcon(p);
+
         final JButton buttonRed = new JButton("Rosu");
         buttonRed.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                lbl.setIcon(new ImageIcon("Images\\masina_red.jpg"));
                 culoare = "red";
-                System.out.println(culoare);
+
             }
         });
         final JButton buttonGreen = new JButton("Verde");
         buttonGreen.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                lbl.setIcon(new ImageIcon("Images\\masina_green.jpg"));
                 culoare = "green";
-                System.out.println(culoare);
             }
         });
-        ImageIcon p = new ImageIcon();
-        BufferedImage img = ImageIO.read(new File("Images\\masina_white.jpg"));
+
         final JButton buttonBlue = new JButton("Albastru");
         buttonBlue.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                lbl.setIcon(new ImageIcon("Images\\masina_blue.jpg"));
                 culoare = "blue";
-                System.out.println(culoare);
             }
         });
         final JButton buttonNext = new JButton("Next ->");
@@ -173,14 +179,12 @@ public class ImageShower {
                     window.setLocationRelativeTo(null);
                 }
                 else {
-
+                    JOptionPane.showMessageDialog(window, "You are supposed to select a colour.");
                 }
             }
         });
 
-        JLabel lbl = new JLabel();
-        p.setImage(img);
-        lbl.setIcon(p);
+
         lbl.setPreferredSize(new Dimension(300, 150));
         JPanel buttons = new JPanel(new GridLayout(0, 1));
 
