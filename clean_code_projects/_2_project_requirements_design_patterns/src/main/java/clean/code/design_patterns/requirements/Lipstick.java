@@ -1,6 +1,6 @@
 public class Lipstick {
-    private String colour;
-    private String finish; //glossy or matte
+    private final String colour;
+    private final String finish; //glossy or matte
 
     public String getColour() {
         return colour;

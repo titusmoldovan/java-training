@@ -1,5 +1,5 @@
 public class Lashes {
-    private int size;
+    private final int size;
 
     public int getSize() {
         return size;

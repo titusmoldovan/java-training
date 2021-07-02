@@ -1,6 +1,6 @@
 public class Foundation {
-    private String brand;
-    private String coverage;
+    private final String brand;
+    private final String coverage;
 
     public String getBrand() {
         return brand;

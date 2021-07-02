@@ -1,5 +1,5 @@
 public class Eyeshadow {
-    private String colour;
+    private final String colour;
 
     public String getColour() {
         return colour;

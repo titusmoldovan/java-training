@@ -1,10 +1,18 @@
+import java.util.HashMap;
+import java.util.Map;
+
 public class CompleteMakeup {
-    private Primer primer;
-    private Foundation foundation;
-    private Lipstick lipstick;
-    private Eyeshadow eyeshadow;
-    private Eyeliner eyeliner;
-    private Lashes lashes;
+    private final String makeupType;
+    private final Primer primer;
+    private final Foundation foundation;
+    private final Lipstick lipstick;
+    private final Eyeshadow eyeshadow;
+    private final Eyeliner eyeliner;
+    private final Lashes lashes;
+
+    public String getMakeupType() {
+        return makeupType;
+    }
 
     public Primer getPrimer() {
         return primer;
@@ -31,6 +39,7 @@ public class CompleteMakeup {
     }
 
     private CompleteMakeup(Builder builder) {
+        this.makeupType = builder.makeupType;
         this.primer = builder.primer;
         this.foundation = builder.foundation;
         this.lipstick = builder.lipstick;
@@ -40,14 +49,16 @@ public class CompleteMakeup {
     }
 
     public static class Builder {
-        private Primer primer;
-        private Foundation foundation;
+        private final String makeupType;
+        private final Primer primer;
+        private final Foundation foundation;
         private Lipstick lipstick;
         private Eyeshadow eyeshadow;
         private Eyeliner eyeliner;
         private Lashes lashes;
 
-        public Builder(Primer primer, Foundation foundation) {
+        public Builder(String makeupType, Primer primer, Foundation foundation) {
+            this.makeupType = makeupType;
             this.primer = primer;
             this.foundation = foundation;
         }
@@ -79,20 +90,53 @@ public class CompleteMakeup {
     }
 
     public static void main(String[] args) {
-        CompleteMakeup bridalMakeup = new CompleteMakeup.Builder(new Primer("mattifying"), new Foundation("Estee Lauder", "High"))
+        /*
+        I use builder pattern in order to create different types of
+        makeup looks.
+         */
+        CompleteMakeup bridalMakeup = new CompleteMakeup.Builder("Bridal Makeup", new Primer("mattifying"), new Foundation("Estee Lauder", "High"))
                 .applyEyeshadow(new Eyeshadow("nude"))
                 .applyLipstick(new Lipstick("light pink", "glossy"))
                 .build();
-        CompleteMakeup arabicMakeup = new CompleteMakeup.Builder(new Primer("hydrating"), new Foundation("MAC", "High"))
+        CompleteMakeup arabicMakeup = new CompleteMakeup.Builder("Arabic Makeup", new Primer("hydrating"), new Foundation("MAC", "High"))
                 .applyEyeliner(new Eyeliner("black", "graphic"))
                 .putLashes(new Lashes(11))
                 .build();
-        CompleteMakeup pinupMakeup = new CompleteMakeup.Builder(new Primer("hydrating"), new Foundation("Huda Beauty", "medium"))
+        CompleteMakeup pinupMakeup = new CompleteMakeup.Builder("Pin-up Makeup", new Primer("hydrating"), new Foundation("Huda Beauty", "medium"))
                 .applyLipstick(new Lipstick("red", "matte"))
                 .applyEyeliner(new Eyeliner("black", "pin-up"))
                 .putLashes(new Lashes(10))
                 .build();
 
-        System.out.println(bridalMakeup.lipstick.getColour());
+        //System.out.println(bridalMakeup.lipstick.getColour());
+
+        /*
+        I use singleton pattern in order to create a professional instagram
+        account where makeup looks are posted. Although there may be multiple
+        physical salons, there is only one instagram account where all the work
+        is promoted.
+         */
+
+
+        Map<Integer, CompleteMakeup> myPosts = new HashMap<>();
+        myPosts.put(1, bridalMakeup);
+        myPosts.put(2, arabicMakeup);
+        myPosts.put(3, pinupMakeup);
+
+        Singleton professionalInstagramAccount = Singleton.getInstance("Beauty Enhancer Salon", myPosts);
+
+        professionalInstagramAccount.displayPosts();
+
+        CompleteMakeup smokeyMakeup = new CompleteMakeup.Builder("Smokey eyes", new Primer("mattifying"), new Foundation("Dior", "Medium"))
+                .applyEyeshadow(new Eyeshadow("black"))
+                .putLashes(new Lashes(12))
+                .build();
+
+        myPosts.remove(2);
+        myPosts.put(4, smokeyMakeup);
+
+        //System.out.println(professionalInstagramAccount.getPosts().get(4).makeupType);
+        professionalInstagramAccount.displayPosts();
+
     }
 }

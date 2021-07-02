@@ -1,5 +1,9 @@
 public class Primer {
-    private String type;
+    private final String type;
+
+    public String getType() {
+        return type;
+    }
 
     public Primer(String type) {
         this.type = type;
