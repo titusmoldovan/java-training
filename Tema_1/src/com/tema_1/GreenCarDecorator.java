@@ -14,13 +14,13 @@ public class GreenCarDecorator extends CarDecorator{
     }
 
     @Override
-    public Integer getMaxVit() {
-        return decoratedCar.getMaxVit();
+    public Integer getMaxSpeed() {
+        return decoratedCar.getMaxSpeed();
     }
 
     @Override
-    public String getFirma() {
-        return decoratedCar.getFirma();
+    public String getCompany() {
+        return decoratedCar.getCompany();
     }
 
     @Override

@@ -8,12 +8,12 @@ public class BMW implements Marca {
     }
 
     @Override
-    public Integer getMaxVit() {
+    public Integer getMaxSpeed() {
         return 230;
     }
 
     @Override
-    public String getFirma() {
+    public String getCompany() {
         return "BMW";
     }
 

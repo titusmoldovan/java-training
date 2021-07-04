@@ -2,14 +2,10 @@ package com.tema_1;
 
 public class RedCarDecorator extends CarDecorator{
 
+    String colour;
+
     public RedCarDecorator(Marca decoratedCar) {
         super(decoratedCar);
-    }
-
-    @Override
-    public void draw() {
-        decoratedCar.draw();
-        setRedColour(decoratedCar);
     }
 
     @Override
@@ -18,16 +14,21 @@ public class RedCarDecorator extends CarDecorator{
     }
 
     @Override
-    public Integer getMaxVit() {
-        return decoratedCar.getMaxVit();
+    public Integer getMaxSpeed() {
+        return decoratedCar.getMaxSpeed();
     }
 
     @Override
-    public String getFirma() {
-        return decoratedCar.getFirma();
+    public String getCompany() {
+        return decoratedCar.getCompany();
     }
 
-    private void setRedColour(Marca decoratedCar) {
-        System.out.println("Car colour: Red");
+    @Override
+    public void draw() {
+        colour = setRedColour(decoratedCar);
+    }
+
+    private String setRedColour(Marca decoratedCar) {
+        return "Red";
     }
 }

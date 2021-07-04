@@ -10,6 +10,6 @@ public class DecoratorPattern {
         System.out.println("\nAudi of blue colour\n");
         blueMercedes.draw();
         System.out.println(blueMercedes.getCP());
-        System.out.println(blueMercedes.getFirma());
+        System.out.println(blueMercedes.getCompany());
     }
 }

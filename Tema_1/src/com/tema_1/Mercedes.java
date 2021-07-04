@@ -9,12 +9,12 @@ public class Mercedes implements Marca {
     }
 
     @Override
-    public Integer getMaxVit() {
+    public Integer getMaxSpeed() {
         return 250;
     }
 
     @Override
-    public String getFirma() {
+    public String getCompany() {
         return "Mercedes";
     }
 

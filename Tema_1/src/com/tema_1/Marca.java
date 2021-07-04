@@ -2,8 +2,8 @@ package com.tema_1;
 
 public interface Marca {
     Integer getCP();
-    Integer getMaxVit();
-    String getFirma();
+    Integer getMaxSpeed();
+    String getCompany();
 
     void draw();
 }

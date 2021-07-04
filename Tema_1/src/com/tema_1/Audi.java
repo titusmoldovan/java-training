@@ -8,12 +8,12 @@ public class Audi implements Marca {
     }
 
     @Override
-    public Integer getMaxVit() {
+    public Integer getMaxSpeed() {
         return 300;
     }
 
     @Override
-    public String getFirma() {
+    public String getCompany() {
         return "Audi";
     }
 
