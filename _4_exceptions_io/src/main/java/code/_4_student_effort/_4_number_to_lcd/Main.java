@@ -17,7 +17,6 @@ public class Main {
         for (String number : numbersFromFile) {
             int numberOfChars = number.length();
             writeInFile(getNumberRepresentation(number), numberOfChars);
-            System.out.println(1);
         }
     }
 
