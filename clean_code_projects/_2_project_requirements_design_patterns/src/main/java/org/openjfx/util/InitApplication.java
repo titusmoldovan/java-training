@@ -47,6 +47,7 @@ public class InitApplication {
                 break;
             }
         }
+        System.out.println(1);
         objectInputStream.close();
         fileInputStream.close();
         for (Tenant tenant : tenants) {
