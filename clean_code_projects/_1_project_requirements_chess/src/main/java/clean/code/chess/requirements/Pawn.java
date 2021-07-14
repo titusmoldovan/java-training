@@ -44,7 +44,60 @@ public class Pawn {
     }
 
     public void Move(MovementType movementType, int newX, int newY) {
-        throw new UnsupportedOperationException("Need to implement Pawn.Move()") ;
+        if (checkLegal(movementType, newX, newY)) {
+            int oldX = xCoordinate;
+            int oldY = yCoordinate;
+            this.xCoordinate = newX;
+            this.yCoordinate = newY;
+            chessBoard.modifySpot(oldX, oldY, Piece.EMPTY);
+            chessBoard.modifySpot(xCoordinate, yCoordinate, Piece.PAWN);
+        }
+    }
+
+    public boolean checkLegal(MovementType movementType, int x, int y) {
+        if (!chessBoard.IsLegalBoardPosition(x, y))
+            return false;
+        if (pieceColor.equals(PieceColor.WHITE)) {
+            if (movementType.equals(MovementType.MOVE)) {
+                /*if (yCoordinate == 1) {
+                    if (y == yCoordinate + 2 && x == xCoordinate) {
+                        return true;
+                    }
+                }*/
+                if (x != xCoordinate || y != yCoordinate + 1) {
+                    return false;
+                }
+//                return true;
+            }
+            if (movementType.equals(MovementType.CAPTURE)) {
+                if (x == xCoordinate + 1 && y == yCoordinate + 1)
+                    return true;
+                if (x == xCoordinate - 1 && y == yCoordinate + 1)
+                    return true;
+                return false;
+            }
+        }
+        if (pieceColor.equals(PieceColor.BLACK)) {
+            if (movementType.equals(MovementType.MOVE)) {
+                /*if (yCoordinate == 6) {
+                    if (y == yCoordinate - 2 && x == xCoordinate) {
+                        return true;
+                    }
+                }*/
+                if (x != xCoordinate || y != yCoordinate - 1) {
+                    return false;
+                }
+//                return true;
+            }
+            if (movementType.equals(MovementType.CAPTURE)) {
+                if (x == xCoordinate + 1 && y == yCoordinate - 1)
+                    return true;
+                if (x == xCoordinate - 1 && y == yCoordinate - 1)
+                    return true;
+                return false;
+            }
+        }
+        return true;
     }
 
     @Override
